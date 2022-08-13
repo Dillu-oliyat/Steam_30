@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Column with Data Labels</title>
+
+<link href="../../assets/styles.css" rel="stylesheet" />
+
+<style>
+
+#chart {
+max-width: 650px;
+margin: 35px auto;
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>
+
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/charts/chart-apex.min.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.min.css">
+
+</head>
+
+</head>
+
+<body>
+
+<div id="app"><apexchart type="bar" height="430" :options="chartOptions" :series="series"></apexchart></div>
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;bar&quot; height=&quot;430&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+      new Vue({
+          el: '#app',
+          components: {
+          apexchart: VueApexCharts,
+          },
+          data: {
+
+          series: [{
+          name: 'Near Miss',
+          data: [6, 3, 5, 3, 4, 7]
+          }, 
+
+          {
+          name: 'Accidents',
+          data: [0, 1, 0, 1, 0, 2]
+          }],
+
+          chartOptions: {
+          chart: {
+          type: 'bar',
+          height: 430
+          },
+
+          fill: {
+          colors: ['#887ef2', '#ffad5f', '#9C27B0']
+          },
+
+          plotOptions: {
+          bar: {
+          horizontal: true,
+          dataLabels: {
+          position: 'top',
+          },
+          }
+          },
+
+          dataLabels: {
+          enabled: true,
+          offsetX: -6,
+          style: {
+          fontSize: '12px',
+          colors: ['#fff']
+          }
+          },
+
+          stroke: {
+          show: true,
+          width: 1,
+          colors: ['#fff']
+          },
+
+          colors: ['#ffad5f', '#887ef2'],
+
+          legend: {
+          show: true,
+          position: 'top',
+          },
+
+
+          tooltip: {
+          shared: true,
+          intersect: false
+          },
+
+          xaxis: {
+          categories: ['TA2013', 'TA2015', 'TA2016', 'TA2017', 'TA2020', 'TA2021'],
+          },
+          },
+
+
+          },
+
+      })
+</script>
+
+</body>
+</html>

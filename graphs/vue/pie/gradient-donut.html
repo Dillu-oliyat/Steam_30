@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Gradient Donut</title>
+
+<link href="../../assets/styles.css" rel="stylesheet" />
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>
+
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/charts/chart-apex.min.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.min.css">
+
+
+</head>
+
+<body>
+
+<div id="app"><apexchart type="donut" width="380" :options="chartOptions" :series="series"></apexchart></div>
+
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;donut&quot; width=&quot;380&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+new Vue({
+        el: '#app',
+        components: {
+        apexchart: VueApexCharts,
+        },
+        data: {
+
+        series: [44, 55, 41, 17, 15],
+        chartOptions: {
+        chart: {
+        type: 'donut',
+        },
+
+        plotOptions: {
+        pie: {
+        startAngle: -90,
+        endAngle: 270
+        }
+        },
+
+        dataLabels: {
+        enabled: true
+        },
+
+        fill: {
+        type: 'gradient',
+        },
+
+        legend: {
+        show: false,
+        position: 'top',
+        },
+
+        responsive: [{
+        breakpoint: 480,
+        options: {
+        chart: {
+        width: 200
+        },
+        
+        }
+        }]
+        },
+        },
+    })
+
+</script>
+
+</body>
+</html>

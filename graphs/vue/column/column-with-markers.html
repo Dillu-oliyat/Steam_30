@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Column with Data Labels</title>
+
+<link href="../../assets/styles.css" rel="stylesheet" />
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>
+
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/charts/chart-apex.min.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.min.css">
+
+</head>
+
+<body>
+
+<div id="app"><apexchart type="bar" height="350" :options="chartOptions" :series="series"></apexchart></div>
+
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;bar&quot; height=&quot;350&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+    new Vue({
+        el: '#app',
+            components: {
+            apexchart: VueApexCharts,
+            },
+            data: {
+
+            series: [
+            {
+            name: 'Secured',
+            data: [
+            {
+            x: 'EGDMC',
+            y: 1292,
+            goals: [
+            {
+            name: 'Required',
+            value: 1400,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+            
+            {
+            x: 'OLEFINS',
+            y: 4432,
+            goals: [
+            {
+            name: 'Required',
+            value: 5400,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'PC',
+            y: 5423,
+            goals: [
+            {
+            name: 'Required',
+            value: 5200,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'AMINES',
+            y: 6653,
+            goals: [
+            {
+            name: 'Required',
+            value: 6500,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'UTILITY',
+            y: 8133,
+            goals: [
+            {
+            name: 'Required',
+            value: 6600,
+            strokeHeight: 13,
+            strokeWidth: 0,
+            strokeLineCap: 'round',
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'PP',
+            y: 7132,
+            goals: [
+            {
+            name: 'Required',
+            value: 7500,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'LDPE',
+            y: 7332,
+            goals: [
+            {
+            name: 'Required',
+            value: 8700,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'HDPE',
+            y: 6553,
+            goals: [
+            {
+            name: 'Required',
+            value: 7300,
+            strokeHeight: 2,
+            strokeDashArray: 2,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            }
+            ]
+            }
+            ],
+
+            chartOptions: {
+            chart: {
+            height: 350,
+            type: 'bar'
+            },
+
+            plotOptions: {
+            bar: {
+            columnWidth: '50%'
+            }
+            },
+
+            colors: ['#887ef2'],
+            dataLabels: {
+            enabled: true
+            },
+
+
+            legend: {
+            show: true,
+            position: 'top', 
+            showForSingleSeries: true,
+            customLegendItems: ['Secured', 'Required'],
+            markers: {
+            fillColors: ['#887ef2', '#ffad5f']
+            }
+            }
+            },
+
+
+        },
+
+    })
+</script>
+
+</body>
+</html>

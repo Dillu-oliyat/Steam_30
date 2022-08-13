@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<!--
+Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+Author: PixInvent
+Website: http://www.pixinvent.com/
+Contact: hello@pixinvent.com
+Follow: www.twitter.com/pixinvents
+Like: www.facebook.com/pixinvents
+Purchase: https://1.envato.market/vuexy_admin
+Renew Support: https://1.envato.market/vuexy_admin
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+
+-->
+<html class="loading" lang="en" data-textdirection="ltr" >
+<!-- BEGIN: Head-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+<meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+<meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+<meta name="author" content="PIXINVENT">
+<title>Dashboard - STeAM - Turnaround Shutdown System</title>
+<link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+<link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
+<!-- BEGIN: Vendor CSS-->
+<link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/wizard/bs-stepper.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/select/select2.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/toastr.min.css">
+<!-- END: Vendor CSS-->
+
+<!-- BEGIN: Theme CSS-->
+<link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/colors.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/components.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/themes/bordered-layout.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.min.css">
+
+
+<!-- BEGIN: Page CSS-->
+<link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/form-validation.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/form-wizard.min.css">
+<!-- END: Page CSS-->
+
+
+<!-- BEGIN: Page CSS-->
+<link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/plugins/charts/chart-apex.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/ext-component-toastr.min.css">
+<!-- END: Page CSS-->
+
+
+<!-- BEGIN: Custom CSS-->
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<!-- END: Custom CSS-->
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+<body onload="zoom()" class="vertical-layout vertical-menu-modern navbar-sticky footer-fixed" data-open="click" data-menu="vertical-menu-modern" data-col="" >
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>	
+<link href="graphs/assets/styles.css" rel="stylesheet" />
+
+<!-- Modal --> 
+<div class="modal fade" id="costModalScrollable" tabindex="-1" aria-labelledby="costModalScrollableTitle" aria-hidden="true" >
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" style="min-width: 70%;">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalScrollableTitle">COST Comparison | Details</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+<div class="modal-body">
+
+<div id="app11"><apexchart type="bar" height="350" :options="chartOptions" :series="series"></apexchart></div>
+
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;bar&quot; height=&quot;350&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+    new Vue({
+        el: '#app11',
+            components: {
+            apexchart: VueApexCharts,
+            },
+            data: {
+
+            series: [
+            {
+            name: 'Budgeted',
+            data: [
+            {
+            x: 'TA2013',
+            y: 121,
+            goals: [
+            {
+            name: 'Committed',
+            value: 135,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+            
+            {
+            x: 'TA2015',
+            y: 80,
+            goals: [
+            {
+            name: 'Required',
+            value: 90,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'TA2016',
+            y: 164,
+            goals: [
+            {
+            name: 'Required',
+            value: 175,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'TA2017',
+            y: 115,
+            goals: [
+            {
+            name: 'Required',
+            value: 105,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'TA2020',
+            y: 186,
+            goals: [
+            {
+            name: 'Required',
+            value: 189,
+			strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'TA2021',
+            y: 191,
+            goals: [
+            {
+            name: 'Required',
+            value: 189,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            }
+
+
+
+            
+            ]
+            }
+            ],
+
+            chartOptions: {
+            chart: {
+            height: 350,
+            type: 'bar'
+            },
+
+            plotOptions: {
+            bar: {
+            columnWidth: '50%'
+            }
+            },
+
+            colors: ['#887ef2'],
+            dataLabels: {
+            enabled: true
+            },
+
+            	yaxis: {
+           	show: false
+          	},
+
+
+            legend: {
+            show: true,
+            position: 'top', 
+            showForSingleSeries: true,
+            customLegendItems: ['Budgeted', 'Committed'],
+            markers: {
+            fillColors: ['#887ef2', '#ffad5f']
+            }
+            }
+            },
+
+
+        },
+
+    })
+</script>
+
+<h3 class="text-center mb-0" id="createAppTitle">Cost Details</h3>
+<!-- <p class="text-center mb-0">Provide application data with this form</p> -->
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="bs-stepper vertical vertical-wizard-example">
+<div class="bs-stepper-header" role="tablist" style="border-right: 1px #f2f2f2 solid; padding-right: 40px;">
+
+<div class="step" data-target="#create-app-details" role="tab" id="create-app-details-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="calendar" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2013</span><span class="bs-stepper-subtitle">Cost Summary</span></span>
+</button></div>
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="step" data-target="#create-app-materials" role="tab" id="create-app-materials-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="calendar" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2015</span><span class="bs-stepper-subtitle">Cost Summary</span></span>
+</button></div>
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="step" data-target="#create-app-scaffolding" role="tab" id="create-app-scaffolding-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="calendar" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2016</span><span class="bs-stepper-subtitle">Cost Summary</span></span>
+</button></div>
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="step" data-target="#create-app-flange" role="tab" id="create-app-flange-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="calendar" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2017</span><span class="bs-stepper-subtitle">Cost Summary</span></span>
+</button></div>
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="step" data-target="#create-app-services" role="tab" id="create-app-services-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="calendar" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2020</span><span class="bs-stepper-subtitle">Cost Summary</span></span>
+</button></div>
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="step" data-target="#create-app-special" role="tab" id="create-app-special-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="calendar" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2021</span><span class="bs-stepper-subtitle">Cost Summary</span></span>
+</button></div>
+
+</div>
+
+<!-- content -->
+
+<!-- START TAB #1 -->
+<div class="bs-stepper-content shadow-none">
+<div id="create-app-details" class="content" role="tabpanel" aria-labelledby="create-app-details-trigger">
+<h5>2013 Cost Details</h5>
+<hr/>
+
+<div class="col-12">
+<div class="row">
+
+<!-- Goal Overview Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h4 class="card-title">Overall Summary</h4>
+<i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i></div>
+<div class="card-body p-0">
+
+<div id="app12"><apexchart type="donut" width="300" :options="chartOptions" :series="series"></apexchart></div>
+
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;donut&quot; width=&quot;380&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+new Vue({
+        el: '#app12',
+        components: {
+        apexchart: VueApexCharts,
+        },
+        data: {
+
+        series: [44, 55, 41, 17, 15],
+        chartOptions: {
+        chart: {
+        type: 'donut',
+        },
+
+        plotOptions: {
+        pie: {
+        startAngle: -90,
+        endAngle: 270
+        }
+        },
+
+        dataLabels: {
+        enabled: true
+        },
+
+        fill: {
+        type: 'gradient',
+        },
+
+        legend: {
+        show: false,
+        position: 'top',
+        },
+
+        responsive: [{
+        breakpoint: 480,
+        options: {
+        chart: {
+        width: 200
+        },
+        
+        }
+        }]
+        },
+        },
+    })
+
+</script>
+
+
+<div class="row border-top text-center mx-0">
+<div class="col-6 border-end py-1">
+<p class="card-text text-muted mb-0">Budgeted</p><h3 class="fw-bolder mb-0">120 M</h3></div>
+<div class="col-6 py-1"><p class="card-text text-muted mb-0">Committed</p><h3 class="fw-bolder mb-0">136 M</h3></div>
+</div></div></div></div>
+<!--/ Goal Overview Card -->
+
+<!-- Goal Overview Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h4 class="card-title">Materails Summary</h4>
+<i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i></div>
+<div class="card-body p-0">
+
+<div id="app13"><apexchart type="donut" width="300" :options="chartOptions" :series="series"></apexchart></div>
+
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;donut&quot; width=&quot;380&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+new Vue({
+        el: '#app13',
+        components: {
+        apexchart: VueApexCharts,
+        },
+        data: {
+
+        series: [44, 55, 41, 17, 15],
+        chartOptions: {
+        chart: {
+        type: 'donut',
+        },
+
+        plotOptions: {
+        pie: {
+        startAngle: -90,
+        endAngle: 270
+        }
+        },
+
+        dataLabels: {
+        enabled: true
+        },
+
+        fill: {
+        type: 'gradient',
+        },
+
+        legend: {
+        show: false,
+        position: 'top',
+        },
+
+        responsive: [{
+        breakpoint: 480,
+        options: {
+        chart: {
+        width: 200
+        },
+        
+        }
+        }]
+        },
+        },
+    })
+
+</script>
+
+<div class="row border-top text-center mx-0">
+<div class="col-6 border-end py-1">
+<p class="card-text text-muted mb-0">Budgeted</p><h3 class="fw-bolder mb-0">68 M</h3></div>
+<div class="col-6 py-1"><p class="card-text text-muted mb-0">Committed</p><h3 class="fw-bolder mb-0">73 M</h3></div>
+</div></div></div></div>
+<!--/ Goal Overview Card -->
+
+<!-- Goal Overview Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h4 class="card-title">Services Summary</h4>
+<i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i></div>
+<div class="card-body p-0">
+
+<div id="app14"><apexchart type="donut" width="300" :options="chartOptions" :series="series"></apexchart></div>
+
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;donut&quot; width=&quot;380&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+new Vue({
+        el: '#app14',
+        components: {
+        apexchart: VueApexCharts,
+        },
+        data: {
+
+        series: [44, 55, 41, 17, 15],
+        chartOptions: {
+        chart: {
+        type: 'donut',
+        },
+
+        plotOptions: {
+        pie: {
+        startAngle: -90,
+        endAngle: 270
+        }
+        },
+
+        dataLabels: {
+        enabled: true
+        },
+
+        fill: {
+        type: 'gradient',
+        },
+
+        legend: {
+        show: false,
+        position: 'top',
+        },
+
+        responsive: [{
+        breakpoint: 480,
+        options: {
+        chart: {
+        width: 200
+        },
+        
+        }
+        }]
+        },
+        },
+    })
+
+</script>
+
+<div class="row border-top text-center mx-0">
+<div class="col-6 border-end py-1">
+<p class="card-text text-muted mb-0">Budgeted</p><h3 class="fw-bolder mb-0">35 M</h3></div>
+<div class="col-6 py-1"><p class="card-text text-muted mb-0">Committed</p><h3 class="fw-bolder mb-0">38 M</h3></div>
+</div></div></div></div>
+<!--/ Goal Overview Card -->
+</div></div>
+
+</div>
+<!-- END TAB #1 -->
+
+
+<div id="create-app-materials"  class="content"role="tabpanel"aria-labelledby="create-app-materials-trigger">
+<h5>2015 Cost Details</h5>
+<hr/>
+
+</div>
+<!-- END TAB #2 -->
+
+
+<div id="create-app-scaffolding" class="content" role="tabpanel" aria-labelledby="create-app-scaffolding-trigger">
+<h5>2016 Cost Details</h5>
+<hr/>
+
+</div>
+<!-- END TAB #3 -->
+
+
+<div id="create-app-flange" class="content" role="tabpanel" aria-labelledby="create-app-flange-trigger">
+<h5 class="mb-1">2017 Cost Details</h5>
+<hr/>
+
+</div>
+<!-- END TAB #4 -->
+
+
+<div id="create-app-services" class="content" role="tabpanel" aria-labelledby="create-app-services-trigger" >
+<h5 class="mb-1">2020 Cost Details</h5>
+<hr/>
+
+</div>
+<!-- END TAB #5 -->
+
+
+<div id="create-app-special" class="content" role="tabpanel" aria-labelledby="create-app-special-trigger" >
+<h5 class="mb-1">2021 Cost Details</h5>
+<hr/>
+
+</div>
+<!-- END TAB #6 -->
+
+</div></div>
+
+</div><!-- END Modal -->
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+</div></div></div></div></div>
+<!-- End trigger modal -->
+
+
+<!-- Modal --> 
+<div class="modal fade" id="manpowerModalScrollable" tabindex="-1" aria-labelledby="manpowerModalScrollableTitle" aria-hidden="true" >
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" style="min-width: 70%;">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalScrollableTitle">MANPOWER Comparison | Details</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+<div class="modal-body">
+
+
+<div class="bs-stepper vertical vertical-wizard-example">
+<div class="bs-stepper-header" role="tablist" style="border-right: 1px #f2f2f2 solid; padding-right: 40px;">
+
+<div class="step" data-target="#create-app-2013" role="tab" id="create-app-2013-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="user" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2013</span><span class="bs-stepper-subtitle">Manpower Summary</span></span>
+</button></div>
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="step" data-target="#create-app-2015" role="tab" id="create-app-2015-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="user" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2015</span><span class="bs-stepper-subtitle">Manpower Summary</span></span>
+</button></div>
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="step" data-target="#create-app-2016" role="tab" id="create-app-2016-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="user" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2016</span><span class="bs-stepper-subtitle">Manpower Summary</span></span>
+</button></div>
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="step" data-target="#create-app-2017" role="tab" id="create-app-2017-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="user" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2017</span><span class="bs-stepper-subtitle">Manpower Summary</span></span>
+</button></div>
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="step" data-target="#create-app-2020" role="tab" id="create-app-2020-trigger">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="user" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2020</span><span class="bs-stepper-subtitle">Manpower Summary</span></span>
+</button></div>
+<hr style="padding: 0px; margin: 5px;" />
+
+<div class="step" data-target="#create-app-2021" role="tab" id="create-app-special-2021">
+<button type="button" class="step-trigger py-0">
+<span class="bs-stepper-box"><i data-feather="user" class="font-medium-3"></i></span>
+<span class="bs-stepper-label"><span class="bs-stepper-title">2021</span><span class="bs-stepper-subtitle">Manpower Summary</span></span>
+</button></div>
+
+</div>
+
+<!-- content -->
+<div class="bs-stepper-content shadow-none">
+
+<div id="create-app-2013" class="content" role="tabpanel" aria-labelledby="create-app-2013-trigger">
+<h5>2013 Manpower Details</h5>
+<hr/>
+
+</div>
+
+<div id="create-app-2015" class="content" role="tabpanel" aria-labelledby="create-app-2015-trigger">
+<h5>2015 Manpower Details</h5>
+<hr/>
+
+</div>
+
+<div id="create-app-2016" class="content" role="tabpanel" aria-labelledby="create-app-2016-trigger">
+<h5>2016 Manpower Details</h5>
+<hr/>
+
+</div>
+
+<div id="create-app-2017" class="content" role="tabpanel" aria-labelledby="create-app-2017-trigger">
+<h5>2017 Manpower Details</h5>
+<hr/>
+
+</div>
+
+<div id="create-app-2020" class="content" role="tabpanel" aria-labelledby="create-app-2020-trigger">
+<h5>2020 Manpower Details</h5>
+<hr/>
+
+</div>
+
+<div id="create-app-2021" class="content" role="tabpanel" aria-labelledby="create-app-2021-trigger">
+<h5>2021 Manpower Details</h5>
+<hr/>
+
+</div>
+
+</div></div>
+
+
+</div><!-- END Modal -->
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+</div></div></div></div></div>
+<!-- End trigger modal -->
+
+
+<!-- Modal --> 
+<div class="modal fade" id="ehssModalScrollable" tabindex="-1" aria-labelledby="ehssModalScrollableTitle" aria-hidden="true" >
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" style="min-width: 70%;">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalScrollableTitle">EHSS Comparison | Details</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+<div class="modal-body">
+
+
+
+</div><!-- END Modal -->
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+</div></div></div></div></div>
+<!-- End trigger modal -->
+
+
+<!-- Modal --> 
+<div class="modal fade" id="durationModalScrollable" tabindex="-1" aria-labelledby="durationModalScrollableTitle" aria-hidden="true" >
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" style="min-width: 70%;">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalScrollableTitle">DURATION Comparison | Details</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+<div class="modal-body">
+
+
+
+</div><!-- END Modal -->
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+</div></div></div></div></div>
+<!-- End trigger modal -->
+
+
+<!-- Modal --> 
+<div class="modal fade" id="worlistModalScrollable" tabindex="-1" aria-labelledby="worklistModalScrollableTitle" aria-hidden="true" >
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" style="min-width: 70%;">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalScrollableTitle">WORKLIST Comparison | Details</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+<div class="modal-body">
+
+
+</div><!-- END Modal -->
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+</div></div></div></div></div>
+<!-- End trigger modal -->
+
+
+<!-- Modal --> 
+<div class="modal fade" id="cycleModalScrollable" tabindex="-1" aria-labelledby="cycleModalScrollableTitle" aria-hidden="true" >
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" style="min-width: 70%;">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalScrollableTitle">TA CYCLE Comparison | Details</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+<div class="modal-body">
+
+
+
+</div><!-- END Modal -->
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+</div></div></div></div></div>
+<!-- End trigger modal -->
+
+
+<!-- Modal --> 
+<div class="modal fade" id="materialModalScrollable" tabindex="-1" aria-labelledby="materialModalScrollableTitle" aria-hidden="true" >
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" style="min-width: 70%;">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalScrollableTitle">MATERIAL Comparison | Details</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+<div class="modal-body">
+
+
+</div><!-- END Modal -->
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+</div></div></div></div></div>
+<!-- End trigger modal -->
+
+
+<!-- Modal --> 
+<div class="modal fade" id="serviceModalScrollable" tabindex="-1" aria-labelledby="serviceModalScrollableTitle" aria-hidden="true" >
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" style="min-width: 70%;">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalScrollableTitle">SERVICES Comparison | Details</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+<div class="modal-body">
+
+
+
+</div><!-- END Modal -->
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+</div></div></div></div></div>
+<!-- End trigger modal -->
+
+
+<!-- Modal --> 
+<div class="modal fade" id="projectModalScrollable" tabindex="-1" aria-labelledby="projectModalScrollableTitle" aria-hidden="true" >
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" style="min-width: 70%;">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalScrollableTitle">PROJECTS Comparison | Details</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+<div class="modal-body">
+
+
+
+</div><!-- END Modal -->
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+</div></div></div></div></div>
+<!-- End trigger modal -->
+
+
+<!-- BEGIN: Header-->
+<nav class="header-navbar navbar navbar-expand-lg align-items-center navbar-light navbar-shadow fixed-top">
+<div class="navbar-container d-flex content">
+<div class="bookmark-wrapper d-flex align-items-center">
+<ul class="nav navbar-nav d-xl-none">
+<li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
+</ul>
+<ul class="nav navbar-nav bookmark-icons">
+<li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
+<li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
+<li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
+<li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
+</ul>
+<ul class="nav navbar-nav">
+<li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon text-warning" data-feather="star"></i></a>
+<div class="bookmark-input search-input">
+<div class="bookmark-input-icon"><i data-feather="search"></i></div>
+<input class="form-control input" type="text" placeholder="Bookmark" tabindex="0" data-search="search">
+<ul class="search-list search-list-bookmark"></ul>
+</div>
+</li>
+</ul>
+</div>
+
+
+<ul class="nav navbar-nav align-items-center ms-auto">
+
+<!-- Language Start Here -->
+<li class="nav-item dropdown dropdown-language">
+<a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
+<div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
+<a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a>
+<a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a>
+<a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a>
+<a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
+</li>
+<!-- Language End Here -->
+
+<!-- Serach Start Here -->
+<li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
+<li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
+<div class="search-input">
+<div class="search-input-icon"><i data-feather="search"></i></div>
+<input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="search">
+<div class="search-input-close"><i data-feather="x"></i></div>
+<ul class="search-list search-list-main"></ul>
+</div>
+</li>
+<!-- Search End Here -->
+
+<!-- Notification Start Here -->
+<li class="nav-item dropdown dropdown-notification me-25">
+<a class="nav-link" href="#" data-bs-toggle="dropdown">
+<i class="ficon" data-feather="bell"></i><span class="badge rounded-pill bg-danger badge-up">5</span></a>
+<ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
+<li class="dropdown-menu-header"><div class="dropdown-header d-flex">
+<h4 class="notification-title mb-0 me-auto">Notifications</h4><div class="badge rounded-pill badge-light-primary">6 New</div></div></li>
+
+<li class="scrollable-container media-list">
+<a class="d-flex" href="#">
+<div class="list-item d-flex align-items-start">
+<div class="me-1"><div class="avatar"><img src="app-assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div></div>
+<div class="list-item-body flex-grow-1">
+<p class="media-heading"><span class="fw-bolder">Revised Order 👋</span>&nbsp;checkout</p>
+<small class="notification-text"> MD Inc. order updated</small></div></div>
+</a></li>
+
+<li class="dropdown-menu-footer"><a class="btn btn-primary w-100" href="#">Read all notifications</a></li>
+</ul>
+</li>
+<!-- Notification End Here -->
+
+<!-- User Start Here -->
+<li class="nav-item dropdown dropdown-user">
+<a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span>
+<span class="user-status">Admin</span></div>
+<span class="avatar"><img class="round" src="app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40">
+<span class="avatar-status-online"></span></span></a>
+
+<div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
+<a class="dropdown-item" href="page-profile.html"><i class="me-50" data-feather="user"></i> Profile</a>
+<a class="dropdown-item" href="app-email.html"><i class="me-50" data-feather="mail"></i> Inbox</a>
+<a class="dropdown-item" href="app-todo.html"><i class="me-50" data-feather="check-square"></i> Task</a>
+<a class="dropdown-item" href="app-chat.html"><i class="me-50" data-feather="message-square"></i> Chats</a>
+
+<div class="dropdown-divider"></div><a class="dropdown-item" href="page-account-settings-account.html">
+<i class="me-50" data-feather="settings"></i> Settings</a>
+<a class="dropdown-item" href="page-pricing.html"><i class="me-50" data-feather="credit-card"></i> Pricing</a>
+<a class="dropdown-item" href="page-faq.html"><i class="me-50" data-feather="help-circle"></i> FAQ</a>
+<a class="dropdown-item" href="index.html"><i class="me-50" data-feather="power"></i> Logout</a>
+</div>
+</li>
+<!-- User End Here -->
+
+</ul>
+</div>
+</nav>
+
+
+<!-- BEGIN: Main Menu-->
+<div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+<div class="navbar-header">
+
+<ul class="nav navbar-nav flex-row">
+<li class="nav-item me-auto"><a class="navbar-brand" href="html/ltr/vertical-menu-template/index.html">
+<span class="brand-logo"><img src="app-assets/images/logo/logo_E.png"></span></a></li>
+
+
+<li class="nav-item nav-toggle">
+<a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse">
+<i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>
+<i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i>
+</a></li>
+</ul>
+</div>
+
+
+<div class="shadow-bottom"></div>
+<div class="main-menu-content">
+<ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+
+<li class="active" class=" nav-item"><a class="d-flex align-items-center" href="comparison_dashboard.html">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">TA Comparisson</span></a></li>	
+
+<li class=" navigation-header"><span data-i18n="Apps &amp; Pages">COMPARISON</span>
+<i data-feather="more-horizontal"></i></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Cost</span></a></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Manpower </span></a></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">EHSS</span></a></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Duration</span></a></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Worklist</span></a></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">TA Cycle</span></a></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Material </span></a></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Services</span></a></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Projects</span></a></li>
+
+
+<li class=" navigation-header"><span data-i18n="Apps &amp; Pages">STeAM Settings</span>
+<i data-feather="more-horizontal"></i></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">User Settings</span></a></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="#">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">FAQ</span></a></li>
+
+<li class=" nav-item"><a class="d-flex align-items-center" href="index.html">
+<i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Logout</span></a></li>
+
+</ul>
+</div>
+</div>
+<!-- END: Main Menu-->
+
+
+
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+<div class="content-overlay"></div>
+<div class="header-navbar-shadow"></div>
+<div class="content-wrapper">
+<div class="content-header row">
+  
+<div class="content-header-left col-md-9 col-12 mb-2">
+<div class="row breadcrumbs-top">
+<div class="col-12">
+<h2 class="content-header-title float-start mb-0">TA Comparisson</h2>
+<div class="breadcrumb-wrapper">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">TA</a></li>
+<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+<li class="breadcrumb-item active">TA Comparisson</li>
+</ol></div></div></div></div>
+
+<div class="content-header-right text-md-end col-md-3 col-12 d-md-block d-none">
+<div class="mb-1 breadcrumb-right">
+<div class="dropdown">
+<button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i data-feather="grid"></i></button>
+<div class="dropdown-menu dropdown-menu-end">
+<a class="dropdown-item" href="app-todo.html"><i class="me-1" data-feather="check-square"></i><span class="align-middle">Todo</span></a>
+<a class="dropdown-item" href="app-chat.html"><i class="me-1" data-feather="message-square"></i><span class="align-middle">Chat</span></a>
+<a class="dropdown-item" href="app-email.html"><i class="me-1" data-feather="mail"></i><span class="align-middle">Email</span></a>
+<a class="dropdown-item" href="app-calendar.html"><i class="me-1" data-feather="calendar"></i><span class="align-middle">Calendar</span></a></div>
+</div></div></div>
+</div>
+
+<div class="content-body"><!-- Dashboard Ecommerce Starts -->
+<section id="dashboard-ecommerce">
+<div class="row match-height">
+
+<!-- Stats Horizontal Card -->
+<div class="col-lg-12 col-12">
+<div class="row">
+
+
+<!-- 1 Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card card-browser-states">
+<div class="card-header">
+<i data-feather="list" class="user-timeline-title-icon"></i>
+<h4 class="card-title">COST Comparison</h4>
+<i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i></div>
+<div class="card-body">
+<div class="browser-states">
+<div class="d-flex flex-row">
+<h6 class="align-self-center mb-0">Comparison By TA</h6></div>
+<div class="d-flex align-items-center">
+<div class="fw-bold text-body-heading me-1">
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#costModalScrollable" > View More</button>
+</div>
+</div></div><hr/>
+
+<div id="app4"><apexchart type="bar" height="350" :options="chartOptions" :series="series"></apexchart></div>
+
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;bar&quot; height=&quot;350&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+    new Vue({
+        el: '#app4',
+            components: {
+            apexchart: VueApexCharts,
+            },
+            data: {
+
+            series: [
+            {
+            name: 'Budgeted',
+            data: [
+            {
+            x: 'TA2013',
+            y: 121,
+            goals: [
+            {
+            name: 'Committed',
+            value: 135,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+            
+            {
+            x: 'TA2015',
+            y: 80,
+            goals: [
+            {
+            name: 'Required',
+            value: 90,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'TA2016',
+            y: 164,
+            goals: [
+            {
+            name: 'Required',
+            value: 175,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'TA2017',
+            y: 115,
+            goals: [
+            {
+            name: 'Required',
+            value: 105,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'TA2020',
+            y: 186,
+            goals: [
+            {
+            name: 'Required',
+            value: 189,
+			strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            },
+
+            {
+            x: 'TA2021',
+            y: 191,
+            goals: [
+            {
+            name: 'Required',
+            value: 189,
+            strokeHeight: 5,
+            strokeColor: '#ffad5f'
+            }
+            ]
+            }
+
+
+
+            
+            ]
+            }
+            ],
+
+            chartOptions: {
+            chart: {
+            height: 350,
+            type: 'bar'
+            },
+
+            plotOptions: {
+            bar: {
+            columnWidth: '50%'
+            }
+            },
+
+            colors: ['#887ef2'],
+            dataLabels: {
+            enabled: true
+            },
+
+            	yaxis: {
+           	show: false
+          	},
+
+
+            legend: {
+            show: true,
+            position: 'top', 
+            showForSingleSeries: true,
+            customLegendItems: ['Budgeted', 'Committed'],
+            markers: {
+            fillColors: ['#887ef2', '#ffad5f']
+            }
+            }
+            },
+
+
+        },
+
+    })
+</script>
+
+</div></div></div>
+<!--/ 1 Card -->
+
+
+<!-- 1 Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card card-browser-states">
+<div class="card-header">
+<i data-feather="list" class="user-timeline-title-icon"></i>
+<h4 class="card-title">Manpower Comparison</h4>
+<i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i></div>
+<div class="card-body">
+<div class="browser-states">
+<div class="d-flex flex-row">
+<h6 class="align-self-center mb-0">Comparison By TA</h6></div>
+<div class="d-flex align-items-center">
+<div class="fw-bold text-body-heading me-1">
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#manpowerModalScrollable" > View More</button>
+</div>
+</div></div><hr/>
+
+<div id="app1"><apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart></div>
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;line&quot; height=&quot;350&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;
+</div>
+
+<script>
+new Vue({
+el: '#app1',
+      components: {
+      apexchart: VueApexCharts,
+      },
+      data: {
+
+          series: [
+          {
+          name: "Man Power",
+          data: [1250, 1863, 2200, 1436, 986, 2530]
+          }
+          ],
+
+          chartOptions: {
+          chart: {
+          height: 350,
+          type: 'line',
+          dropShadow: {
+          enabled: true,
+          color: '#887ef2',
+          top: 18,
+          left: 7,
+          blur: 10,
+          opacity: 0.2
+          },
+
+          toolbar: {
+          show: false
+          }
+          },
+
+          colors: ['#ffad5f', '#887ef2'],
+
+          dataLabels: {
+          enabled: true,
+          colors: '#ffffff',
+          },
+
+          stroke: {
+          curve: 'smooth'
+          },
+
+          legend: {
+          show: true,
+          position: 'top'
+          },
+
+          markers: {
+          size: 1
+          },
+
+          xaxis: {
+          categories: ['TA2013', 'TA2015', 'TA2016', 'TA2017', 'TA2020', 'TA2021'],
+          title: {
+          text: ''
+          },
+          },
+
+          yaxis: {
+          show: false
+          },
+          },
+          },
+})
+</script>
+
+</div></div></div>
+<!--/ 1 Card -->
+
+
+<!-- 1 Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card card-browser-states">
+<div class="card-header">
+<i data-feather="list" class="user-timeline-title-icon"></i>
+<h4 class="card-title">EHSS Comparison</h4>
+<i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i></div>
+<div class="card-body">
+<div class="browser-states">
+<div class="d-flex flex-row">
+<h6 class="align-self-center mb-0">Comparison By TA</h6></div>
+<div class="d-flex align-items-center">
+<div class="fw-bold text-body-heading me-1">
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#ehssModalScrollable" > View More</button>
+</div>
+</div></div><hr/>
+
+<div id="app2"><apexchart type="bar" height="430" :options="chartOptions" :series="series"></apexchart></div>
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;bar&quot; height=&quot;430&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+      new Vue({
+          el: '#app2',
+          components: {
+          apexchart: VueApexCharts,
+          },
+          data: {
+
+          series: [{
+          name: 'Near Miss',
+          data: [6, 3, 5, 3, 4, 7]
+          }, 
+
+          {
+          name: 'Accidents',
+          data: [0, 1, 0, 1, 0, 2]
+          }],
+
+          chartOptions: {
+          chart: {
+          type: 'bar',
+          height: 430
+          },
+
+          fill: {
+          colors: ['#887ef2', '#ffad5f', '#9C27B0']
+          },
+
+          plotOptions: {
+          bar: {
+          horizontal: true,
+          dataLabels: {
+          position: 'top',
+          },
+          }
+          },
+
+          dataLabels: {
+          enabled: true,
+          offsetX: -6,
+          style: {
+          fontSize: '12px',
+          colors: ['#fff']
+          }
+          },
+
+          colors: ['#ffad5f', '#887ef2'],
+
+          legend: {
+          show: true,
+          position: 'top',
+          },
+
+
+          tooltip: {
+          shared: true,
+          intersect: false
+          },
+
+          xaxis: {
+          categories: ['TA2013', 'TA2015', 'TA2016', 'TA2017', 'TA2020', 'TA2021'],
+          },
+          },
+
+
+          },
+
+      })
+</script>
+</div></div></div>
+<!--/ 1 Card -->
+
+
+<!-- 1 Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card card-browser-states">
+<div class="card-header">
+<i data-feather="list" class="user-timeline-title-icon"></i>
+<h4 class="card-title">Duration Comparison</h4>
+<i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i></div>
+<div class="card-body">
+<div class="browser-states">
+<div class="d-flex flex-row">
+<h6 class="align-self-center mb-0">Comparison By TA</h6></div>
+<div class="d-flex align-items-center">
+<div class="fw-bold text-body-heading me-1">
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#durationModalScrollable" > View More</button>
+</div>
+</div></div><hr/>
+
+
+<div id="app3"><apexchart type="bar" height="430" :options="chartOptions" :series="series"></apexchart></div>
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;bar&quot; height=&quot;430&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+      new Vue({
+          el: '#app3',
+          components: {
+          apexchart: VueApexCharts,
+          },
+          data: {
+
+          series: [{
+          name: 'Total Duration',
+          data: [6, 3, 5, 3, 4, 7]
+          }],
+
+          chartOptions: {
+          chart: {
+          type: 'bar',
+          height: 430
+          },
+
+          fill: {
+          colors: ['#ffad5f', '#9C27B0']
+          },
+
+          plotOptions: {
+          bar: {
+          horizontal: true,
+          dataLabels: {
+          position: 'top',
+          },
+          }
+          },
+
+          dataLabels: {
+          enabled: true,
+          offsetX: -6,
+          formatter: function (val, opt) {
+          return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val
+    	  },
+          style: {
+          fontSize: '12px',
+          colors: ['#fff']
+          }
+          },
+
+          colors: ['#ffad5f', '#887ef2'],
+
+          legend: {
+          show: true,
+          position: 'top',
+          },
+
+
+          tooltip: {
+          shared: true,
+          intersect: false
+          },
+
+          xaxis: {
+          categories: ['TA2013', 'TA2015', 'TA2016', 'TA2017', 'TA2020', 'TA2021'],
+          },
+
+    	  yaxis: {
+          show: false
+          },
+
+          },
+
+
+          },
+
+      })
+</script>
+
+
+</div></div></div>
+<!--/ 1 Card -->
+
+
+<!-- 1 Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card card-browser-states">
+<div class="card-header">
+<i data-feather="list" class="user-timeline-title-icon"></i>
+<h4 class="card-title">Worklist Comparison</h4>
+<i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i></div>
+
+<div class="card-body">
+<div class="browser-states">
+<div class="d-flex flex-row">
+<h6 class="align-self-center mb-0">Comparison By TA</h6></div>
+<div class="d-flex align-items-center">
+<div class="fw-bold text-body-heading me-1">
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#worklistModalScrollable" > View More</button>
+</div>
+</div></div><hr/>
+
+<div id="app"><apexchart type="bar" height="350" :options="chartOptions" :series="series"></apexchart></div>
+
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;bar&quot; height=&quot;350&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+new Vue({
+el: '#app',
+components: {
+apexchart: VueApexCharts,
+},
+data: {
+
+        series: [{
+        name: 'Total Worklist',
+        data: [2036, 3596, 2654, 3986, 1565, 2463]
+        }],
+
+        chartOptions: {
+        chart: {
+        height: 350,
+        type: 'bar',
+        },
+
+        fill: {
+        colors: ['#887ef2', '#ffad5f', '#9C27B0']
+        },
+
+        plotOptions: {
+        bar: {
+        borderRadius: 10,
+        dataLabels: {
+        position: 'top', // top, center, bottom
+        },
+        }
+        },
+
+        dataLabels: {
+        enabled: true,
+        formatter: function (val) {
+        return val + "";
+        },
+        offsetY: -30,
+        style: {
+        fontSize: '14px',
+        colors: ["#304758"]
+        }
+        },
+
+        xaxis: {
+        categories: ['TA2013', 'TA2015', 'TA2016', 'TA2017', 'TA2020', 'TA2021'],
+        position: 'bottom',
+        axisBorder: {
+        show: false
+        },
+
+        axisTicks: {
+        show: false
+        },
+
+        legend: {
+        show: true,
+        position: 'top'
+        },
+
+        crosshairs: {
+        fill: {
+        type: 'gradient',
+        gradient: {
+        colorFrom: '#D8E3F0',
+        colorTo: '#BED1E6',
+        stops: [0, 100],
+        opacityFrom: 0.4,
+        opacityTo: 0.5,
+        }
+        }
+        },
+        tooltip: {
+        enabled: true,
+        }
+        },
+        yaxis: {
+        axisBorder: {
+        show: false
+        },
+        axisTicks: {
+        show: false,
+        },
+        labels: {
+        show: false,
+        formatter: function (val) {
+        return val + "";
+        }
+        }
+
+        },
+
+        },
+  },
+
+})
+</script>
+
+</div></div></div>
+<!--/ 1 Card -->
+
+
+<!-- 1 Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card card-browser-states">
+<div class="card-header">
+<i data-feather="list" class="user-timeline-title-icon"></i>
+<h4 class="card-title">TA Cycle Comparison</h4>
+<i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i></div>
+<div class="card-body">
+<div class="browser-states">
+<div class="d-flex flex-row">
+<h6 class="align-self-center mb-0">Comparison By TA</h6></div>
+<div class="d-flex align-items-center">
+<div class="fw-bold text-body-heading me-1">
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#cycleModalScrollable" > View More</button>
+</div>
+</div></div><hr/>
+
+</div></div></div>
+<!--/ 1 Card -->
+
+
+<!-- 1 Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card card-browser-states">
+<div class="card-header">
+<i data-feather="list" class="user-timeline-title-icon"></i>
+<h4 class="card-title">Material Comparison</h4>
+<i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i></div>
+<div class="card-body">
+<div class="browser-states">
+<div class="d-flex flex-row">
+<h6 class="align-self-center mb-0">Action Points</h6></div>
+<div class="d-flex align-items-center">
+<div class="fw-bold text-body-heading me-1">
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#materialModalScrollable" > View More</button>
+</div>
+</div></div><hr/>
+
+<div id="app5"><apexchart type="bar" height="350" :options="chartOptions" :series="series"></apexchart></div>
+
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;bar&quot; height=&quot;350&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+new Vue({
+el: '#app5',
+components: {
+apexchart: VueApexCharts,
+},
+data: {
+
+        series: [{
+        name: 'Total Required',
+        data: [2354, 1286, 1353, 2563, 1652, 3652]
+        }, {
+        name: 'Long Lead',
+        data: [89, 61, 40, 151, 13, 471]
+        }],
+
+        chartOptions: {
+        chart: {
+        height: 350,
+        type: 'bar',
+        },
+
+        fill: {
+        colors: ['#887ef2', '#ffad5f', '#9C27B0']
+        },
+
+        legend: {
+        show: true,
+        position: 'top',
+        fontSize: '14px',
+        },
+
+        plotOptions: {
+        bar: {
+        borderRadius: 10,
+        dataLabels: {
+        position: 'top', // top, center, bottom
+        },
+        }
+        },
+
+        colors: ['#ffad5f', '#887ef2'],
+
+        dataLabels: {
+        enabled: true,
+        formatter: function (val) {
+        return val + "";
+        },
+        offsetY: -30,
+        style: {
+        fontSize: '14px',
+        colors: ["#304758"]
+        }
+        },
+
+        xaxis: {
+        categories: ['TA2013', 'TA2015', 'TA2016', 'TA2017', 'TA2020', 'TA2021'],
+        position: 'bottom',
+        axisBorder: {
+        show: false
+        },
+
+        axisTicks: {
+        show: false
+        },
+
+        legend: {
+        show: true,
+        position: 'top'
+        },
+
+        crosshairs: {
+        fill: {
+        type: 'gradient',
+        gradient: {
+        colorFrom: '#D8E3F0',
+        colorTo: '#BED1E6',
+        stops: [0, 100],
+        opacityFrom: 0.4,
+        opacityTo: 0.5,
+        }
+        }
+        },
+        tooltip: {
+        enabled: true,
+        }
+        },
+        yaxis: {
+        axisBorder: {
+        show: false
+        },
+        axisTicks: {
+        show: false,
+        },
+        labels: {
+        show: false,
+        formatter: function (val) {
+        return val + "";
+        }
+        }
+
+        },
+
+        },
+  },
+
+})
+</script>
+
+</div></div></div>
+<!--/ 1 Card -->
+
+
+<!-- 1 Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card card-browser-states">
+<div class="card-header">
+<i data-feather="list" class="user-timeline-title-icon"></i>
+<h4 class="card-title">Services Comparison</h4>
+<i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i></div>
+<div class="card-body">
+<div class="browser-states">
+<div class="d-flex flex-row">
+<h6 class="align-self-center mb-0">Comparison By TA</h6></div>
+<div class="d-flex align-items-center">
+<div class="fw-bold text-body-heading me-1">
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#serviceModalScrollable" > View More</button>
+</div>
+</div></div><hr/>
+
+
+<div id="app6"><apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart></div>
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;line&quot; height=&quot;350&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;
+</div>
+
+<script>
+new Vue({
+el: '#app6',
+      components: {
+      apexchart: VueApexCharts,
+      },
+      data: {
+
+          series: [
+          {
+          name: "PR Raised",
+          data: [26, 41, 52, 68, 85, 94]
+          },
+          {
+          name: "PO Issued",
+          data: [6, 15, 22, 31, 45, 63]
+          }
+          ],
+
+          chartOptions: {
+          chart: {
+          height: 350,
+          type: 'line',
+          dropShadow: {
+          enabled: true,
+          color: '#887ef2',
+          top: 18,
+          left: 7,
+          blur: 10,
+          opacity: 0.2
+          },
+
+          toolbar: {
+          show: false
+          }
+          },
+
+          colors: ['#887ef2', '#ffad5f'],
+
+          dataLabels: {
+          enabled: true,
+          colors: '#ffffff',
+          },
+
+          stroke: {
+          curve: 'smooth'
+          },
+
+          legend: {
+          show: true,
+          position: 'top'
+          },
+
+          markers: {
+          size: 1
+          },
+
+          xaxis: {
+          categories: ['TA2013', 'TA2015', 'TA2016', 'TA2017', 'TA2020', 'TA2021'],
+          title: {
+          text: ''
+          }
+          },
+
+          yaxis: {
+          show: false
+          },
+
+          },
+          },
+})
+</script>
+
+</div></div></div>
+<!--/ 1 Card -->
+
+
+
+<!-- 1 Card -->
+<div class="col-lg-4 col-md-6 col-12">
+<div class="card card-browser-states">
+<div class="card-header">
+<i data-feather="list" class="user-timeline-title-icon"></i>
+<h4 class="card-title">Projects Comparison</h4>
+<i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i></div>
+<div class="card-body">
+<div class="browser-states">
+<div class="d-flex flex-row">
+<h6 class="align-self-center mb-0">Action Points</h6></div>
+<div class="d-flex align-items-center">
+<div class="fw-bold text-body-heading me-1">
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectModalScrollable" > View More</button>
+</div>
+</div></div><hr/>
+
+<div id="app7"><apexchart type="bar" height="430" :options="chartOptions" :series="series"></apexchart></div>
+<!-- Below element is just for displaying source code. it is not required. DO NOT USE -->
+<div id="html">
+&lt;div id=&quot;chart&quot;&gt;
+&lt;apexchart type=&quot;bar&quot; height=&quot;430&quot; :options=&quot;chartOptions&quot; :series=&quot;series&quot;&gt;&lt;/apexchart&gt;
+&lt;/div&gt;</div>
+
+<script>
+      new Vue({
+          el: '#app7',
+          components: {
+          apexchart: VueApexCharts,
+          },
+          data: {
+
+          series: [{
+          name: 'Total Duration',
+          data: [6, 3, 5, 3, 4, 7]
+          }],
+
+          chartOptions: {
+          chart: {
+          type: 'bar',
+          height: 430
+          },
+
+          fill: {
+          colors: ['#ffad5f', '#9C27B0']
+          },
+
+          plotOptions: {
+          bar: {
+          horizontal: true,
+          dataLabels: {
+          position: 'top',
+          },
+          }
+          },
+
+          dataLabels: {
+          enabled: true,
+          offsetX: -6,
+          formatter: function (val, opt) {
+          return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val
+    	  },
+          style: {
+          fontSize: '12px',
+          colors: ['#fff']
+          }
+          },
+
+          colors: ['#ffad5f', '#887ef2'],
+
+          legend: {
+          show: true,
+          position: 'top',
+          },
+
+
+          tooltip: {
+          shared: true,
+          intersect: false
+          },
+
+          xaxis: {
+          categories: ['TA2013', 'TA2015', 'TA2016', 'TA2017', 'TA2020', 'TA2021'],
+          },
+
+    	  yaxis: {
+          show: false
+          },
+
+          },
+
+
+          },
+
+      })
+</script>
+
+
+
+</div></div></div>
+<!--/ 1 Card -->
+
+</div>
+</div><!-- Stats Horizontal Card -->
+
+</div></section>
+<!-- Dashboard Ecommerce ends -->
+
+</div></div></div>
+<!-- END: Content-->
+
+
+<!-- BEGIN: Customizer-->
+<div class="customizer d-none d-md-block">
+<a class="customizer-toggle d-flex align-items-center justify-content-center" href="#">
+<i class="spinner" data-feather="settings"></i></a><div class="customizer-content">
+<!-- Customizer header -->
+<div class="customizer-header px-2 pt-1 pb-0 position-relative">
+<h4 class="mb-0">Theme Customizer</h4><p class="m-0">Customize & Preview in Real Time</p>
+<a class="customizer-close" href="#"><i data-feather="x"></i></a>
+</div>
+
+<hr />
+
+<!-- Styling & Text Direction -->
+<div class="customizer-styling-direction px-2">
+<p class="fw-bold">Skin</p>
+<div class="d-flex">
+<div class="form-check me-1">
+<input
+type="radio"
+id="skinlight"
+name="skinradio"
+class="form-check-input layout-name"
+checked
+data-layout=""
+/>
+<label class="form-check-label" for="skinlight">Light</label>
+</div>
+<div class="form-check me-1">
+<input
+type="radio"
+id="skinbordered"
+name="skinradio"
+class="form-check-input layout-name"
+data-layout="bordered-layout"
+/>
+<label class="form-check-label" for="skinbordered">Bordered</label>
+</div>
+<div class="form-check me-1">
+<input
+type="radio"
+id="skindark"
+name="skinradio"
+class="form-check-input layout-name"
+data-layout="dark-layout"
+/>
+<label class="form-check-label" for="skindark">Dark</label>
+</div>
+<div class="form-check">
+<input
+type="radio"
+id="skinsemidark"
+name="skinradio"
+class="form-check-input layout-name"
+data-layout="semi-dark-layout"
+/>
+<label class="form-check-label" for="skinsemidark">Semi Dark</label>
+</div>
+</div>
+</div>
+
+<hr />
+
+<!-- Menu -->
+<div class="customizer-menu px-2">
+<div id="customizer-menu-collapsible" class="d-flex">
+<p class="fw-bold me-auto m-0">Menu Collapsed</p>
+<div class="form-check form-check-primary form-switch">
+<input type="checkbox" class="form-check-input" id="collapse-sidebar-switch" />
+<label class="form-check-label" for="collapse-sidebar-switch"></label>
+</div>
+</div>
+</div>
+<hr />
+
+<!-- Layout Width -->
+<div class="customizer-footer px-2">
+<p class="fw-bold">Layout Width</p>
+<div class="d-flex">
+<div class="form-check me-1">
+<input type="radio" id="layout-width-full" name="layoutWidth" class="form-check-input" checked />
+<label class="form-check-label" for="layout-width-full">Full Width</label>
+</div>
+<div class="form-check me-1">
+<input type="radio" id="layout-width-boxed" name="layoutWidth" class="form-check-input" />
+<label class="form-check-label" for="layout-width-boxed">Boxed</label>
+</div>
+</div>
+</div>
+<hr />
+
+<!-- Navbar -->
+<div class="customizer-navbar px-2">
+<div id="customizer-navbar-colors">
+<p class="fw-bold">Navbar Color</p>
+<ul class="list-inline unstyled-list">
+<li class="color-box bg-white border selected" data-navbar-default=""></li>
+<li class="color-box bg-primary" data-navbar-color="bg-primary"></li>
+<li class="color-box bg-secondary" data-navbar-color="bg-secondary"></li>
+<li class="color-box bg-success" data-navbar-color="bg-success"></li>
+<li class="color-box bg-danger" data-navbar-color="bg-danger"></li>
+<li class="color-box bg-info" data-navbar-color="bg-info"></li>
+<li class="color-box bg-warning" data-navbar-color="bg-warning"></li>
+<li class="color-box bg-dark" data-navbar-color="bg-dark"></li>
+</ul>
+</div>
+
+<p class="navbar-type-text fw-bold">Navbar Type</p>
+<div class="d-flex">
+<div class="form-check me-1">
+<input type="radio" id="nav-type-floating" name="navType" class="form-check-input" checked />
+<label class="form-check-label" for="nav-type-floating">Floating</label>
+</div>
+<div class="form-check me-1">
+<input type="radio" id="nav-type-sticky" name="navType" class="form-check-input" />
+<label class="form-check-label" for="nav-type-sticky">Sticky</label>
+</div>
+<div class="form-check me-1">
+<input type="radio" id="nav-type-static" name="navType" class="form-check-input" />
+<label class="form-check-label" for="nav-type-static">Static</label>
+</div>
+<div class="form-check">
+<input type="radio" id="nav-type-hidden" name="navType" class="form-check-input" />
+<label class="form-check-label" for="nav-type-hidden">Hidden</label>
+</div>
+</div>
+</div>
+<hr />
+
+<!-- Footer -->
+<div class="customizer-footer px-2">
+<p class="fw-bold">Footer Type</p>
+<div class="d-flex">
+<div class="form-check me-1">
+<input type="radio" id="footer-type-sticky" name="footerType" class="form-check-input" />
+<label class="form-check-label" for="footer-type-sticky">Sticky</label>
+</div>
+<div class="form-check me-1">
+<input type="radio" id="footer-type-static" name="footerType" class="form-check-input" checked />
+<label class="form-check-label" for="footer-type-static">Static</label>
+</div>
+<div class="form-check me-1">
+<input type="radio" id="footer-type-hidden" name="footerType" class="form-check-input" />
+<label class="form-check-label" for="footer-type-hidden">Hidden</label>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<!-- End: Customizer-->
+
+<!-- Buynow Button-->
+<div class="buy-now"><a href="#" target="_blank" class="btn btn-danger">Quick Meeting</a>
+
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+
+<!-- BEGIN: Footer-->
+<footer class="footer footer-static footer-light">
+<p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT  &copy; 2021<a class="ms-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-end d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+</footer>
+<button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+<!-- END: Footer-->
+
+
+<!-- BEGIN: Vendor JS-->
+<script src="app-assets/vendors/js/vendors.min.js"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="app-assets/vendors/js/forms/wizard/bs-stepper.min.js"></script>
+<script src="app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+<script src="app-assets/vendors/js/forms/cleave/cleave.min.js"></script>
+<script src="app-assets/vendors/js/forms/cleave/addons/cleave-phone.us.js"></script>
+<script src="app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="app-assets/js/core/app-menu.min.js"></script>
+<script src="app-assets/js/core/app.min.js"></script>
+<script src="app-assets/js/scripts/customizer.min.js"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="app-assets/js/scripts/pages/modal-add-new-cc.min.js"></script>
+<script src="app-assets/js/scripts/pages/page-pricing.min.js"></script>
+<script src="app-assets/js/scripts/pages/modal-add-new-address.min.js"></script>
+<script src="app-assets/js/scripts/pages/modal-create-app.min.js"></script>
+<script src="app-assets/js/scripts/pages/modal-two-factor-auth.min.js"></script>
+<script src="app-assets/js/scripts/pages/modal-edit-user.min.js"></script>
+<script src="app-assets/js/scripts/pages/modal-share-project.min.js"></script>
+<!-- END: Page JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="app-assets/js/scripts/forms/form-select2.min.js"></script>
+<!-- END: Page JS-->
+
+
+<!-- BEGIN: Page JS-->
+<script src="app-assets/js/scripts/forms/form-wizard.min.js"></script>
+<!-- END: Page JS-->
+
+
+<script>
+$(window).on('load',  function(){
+if (feather) {
+feather.replace({ width: 14, height: 14 });
+}
+})
+</script>
+
+
+
+</body>
+<!-- END: Body-->
+</html>
+
+
+
